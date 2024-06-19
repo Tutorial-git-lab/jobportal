@@ -21,18 +21,19 @@ export const Navbar = (props) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/JobSeeker">
-                    <strong>JobSeeker</strong>
+                  <Link className="nav-link" to="/NewJobSeeker">
+                    <strong>New Job Seeker</strong>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/NewCompany">
-                    <strong>NewCompany</strong>
+                    <strong>New Company</strong>
                   </Link>
                 </li>
+
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Admin Login">
-                    <strong>Admin Login</strong>
+                  <Link className="nav-link" to="/Login">
+                    <strong>Login</strong>
                   </Link>
                 </li>
                 <li className="nav-item">

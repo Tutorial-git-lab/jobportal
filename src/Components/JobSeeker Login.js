@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import MyAccount from "./MyAccount";
 export default function CompanyLogin() {
   return (
     <>
@@ -26,15 +27,21 @@ export default function CompanyLogin() {
                       height="100px"
                     />
                   </div>
-                  <div className="my-3 border">
-                    <div className="text-center my-1 border">
-                      <Link to="/PostNewJob">My Account</Link>
-                    </div>
-                    <div className="text-center my-1 border">
-                      <Link to="/MyPostedJob">Job matches</Link>
-                    </div>
+
+                  <div>
+                    <input type="file" />
+                  </div>
+                  <div className="my-1 border">
                     <div className="text-center my-1 border">
                       <Link to="/MyAccount">My Account</Link>
+                    </div>
+
+                    <div className="text-center my-1 border">
+                      <Link to="/JobMatches">Job Matches</Link>
+                      <Outlet />
+                    </div>
+                    <div className="text-center my-1 border">
+                      <Link to="/PostNewJob">Post New Job</Link>
                     </div>
                     <div className="text-center my-1 border">
                       <Link to="/ProfileMatch">Profile Match</Link>
@@ -103,13 +110,13 @@ export default function CompanyLogin() {
                       </div>
                     </div>
                     <div className="container border">
-                      <div className="container border"></div>
+                      <Outlet />
                     </div>
                   </div>
                 </div>
                 <div className="col-3 d-flex-col bg-white border">
                   <div className="text-center my-2 border">
-                    <Link to="/LogOut">LogOut</Link>
+                    <Link to="/">LogOut</Link>
                   </div>
                   <div className="text-center my-2 border">
                     <Link to="/MyMessage">My Message</Link>

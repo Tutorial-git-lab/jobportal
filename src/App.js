@@ -1,9 +1,7 @@
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./Components/Home";
-import JobSeeker from "./Components/JobSeeker";
 import NewCompany from "./Components/NewCompany";
-import AdminLogin from "./Components/Admin Login";
 import FeedBack from "./Components/FeedBack";
 import ContactUs from "./Components/Contact Us";
 import { Navbar } from "./Components/Navbar";
@@ -24,11 +22,13 @@ import AdminPage from "./Components/AdminPage";
 import JobSeekerReport from "./Components/JobSeekerReport";
 import CompanyReport from "./Components/CompanyReport";
 import FeedBackReport from "./Components/FeedBackReport";
+import MyMessage from "./Components/MyMessage";
+import Login from "./Components/Login";
 function App() {
   return (
     <>
       <Router>
-        <div className="container border my-3">
+        <div className="container border my-2">
           <div className="row">
             <div className="col-4 d-flex-col">
               <Header />
@@ -43,9 +43,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
-              <Route exact path="/JobSeeker" element={<JobSeeker />}></Route>
-              <Route exact path="/NewCompany" element={<NewCompany />}></Route>
-              <Route exact path="/Admin Login" element={<AdminLogin />}></Route>
+
+              <Route exact path="/Login" element={<Login />}></Route>
               <Route exact path="/FeedBack" element={<FeedBack />}></Route>
               <Route exact path="/ContactUs" element={<ContactUs />}></Route>
               {/* <Route
@@ -82,7 +81,7 @@ function App() {
                 path="/ChangePassword"
                 element={<ChangePassword />}
               ></Route>
-              <Route exact path="/MyMessage" element={<ContactUs />}></Route>
+              <Route exact path="/MyMessage" element={<MyMessage />}></Route>
               <Route exact path="/MyInbox" element={<MyInbox />}></Route>
               <Route exact path="/LogOut" element={<LogOut />}></Route>
               <Route exact path="/Sent" element={<Sent />}></Route>

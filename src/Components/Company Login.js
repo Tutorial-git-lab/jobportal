@@ -99,13 +99,13 @@ export default function CompanyLogin() {
                 </div>
                 <div className="col-3 d-flex-col bg-white border">
                   <div className="text-center my-2 border">
-                    <Link to="/LogOut">LogOut</Link>
+                    <Link to="/">LogOut</Link>
                   </div>
                   <div className="text-center my-2 border">
                     <Link to="/MyMessage">My Message</Link>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/MyBox">My Inbox</Link>
+                    <Link to="/MyInbox">My Inbox</Link>
                   </div>
                   <div className="text-center my-2 border">
                     <Link to="/Sent">Sent</Link>

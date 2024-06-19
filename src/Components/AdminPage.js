@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 export default function AdminPage() {
   return (
     <>
@@ -23,6 +23,9 @@ export default function AdminPage() {
                     <div className="text-center my-2 border">
                       <Link to="/FeedBackReport">FeedBack Report</Link>
                     </div>
+                    <div className="text-center my-2 border">
+                      <Link to="/">LogOut</Link>
+                    </div>
                   </div>
                 </div>
                 <div className="col-8 d-flex-col border"></div>
@@ -31,6 +34,7 @@ export default function AdminPage() {
           </div>
         </div>
       </div>
+      <Outlet />
     </>
   );
 }
