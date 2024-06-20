@@ -2,7 +2,7 @@ import React from "react";
 export default function NewCompany() {
   return (
     <div className="d-flex align-item-center justify-content-center w-80 vh-40 ">
-      <div className="form_container rounded bg-white w-80 my-1">
+      <div className="form_container rounded bg-silver w-80 my-1 ">
         <div className="row">
           <div className="d-flex justify-content-center border">
             <h5 className="text-center mb-3 my-3 ">New Company Registration</h5>
@@ -36,11 +36,12 @@ export default function NewCompany() {
               <label htmlFor="city" className="form-label col-4 text-end">
                 <strong>City:</strong>
               </label>
-              <input
-                type="text"
-                className="col-6"
-                placeholder="Enter your city"
-              />
+              <select name="select" className="col-3">
+                <option value="0">Mohali</option>
+                <option value="1">Chandigarh</option>
+                <option value="2">Chenai</option>
+                <option value="3">Pune</option>
+              </select>
             </div>
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="pincode" className="form-label col-4 text-end">
@@ -75,7 +76,12 @@ export default function NewCompany() {
               <label htmlFor="type" className="form-label col-4 text-end">
                 <strong>Type:</strong>
               </label>
-              <input type="text" className="col-6" placeholder="Enter type" />
+              <select name="select" className="col-6">
+                <option value="0">Software Developer</option>
+                <option value="1">Database Engineer</option>
+                <option value="2">DevOps Engineer</option>
+                <option value="3">Software Engineer</option>
+              </select>
             </div>
           </div>
 
@@ -114,9 +120,11 @@ export default function NewCompany() {
               />
             </div>
             <div className="text-center">
-              <button type="submit" className="btn btn-success mt-3">
-                Registration
-              </button>
+              <a href="/">
+                <button type="submit" className="btn btn-success mt-3">
+                  Submit
+                </button>
+              </a>
             </div>
           </div>
         </div>

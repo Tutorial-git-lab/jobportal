@@ -1,8 +1,9 @@
 import React from "react";
-export default function () {
+
+export default function MySent() {
   return (
     <div className="text-center p-1">
-      <h5>My Message</h5>
+      <strong>My Sent</strong>
     </div>
   );
 }

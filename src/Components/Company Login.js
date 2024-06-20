@@ -1,6 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import PostNewJob from "./PostNewJob";
+import MyPostedJob from "./MyPostedJob";
+import MyAccount from "./MyAccount";
+import ProfileMatch from "./ProfileMatch";
+import AppliedJob from "./AppliedJob";
+import ChangePassword from "./ChangePassword";
+import LogOut from "./LogOut";
+import MyMessage from "./MyMessage";
+import Sent from "./Sent";
+import MyInbox from "./MyInbox";
 export default function CompanyLogin() {
+  const [activeKey, setActiveKey] = useState("myPostedJob");
+
+  const renderComponent = () => {
+    switch (activeKey) {
+      case "postNewJob":
+        return <PostNewJob />;
+      case "myPostedJob":
+        return <MyPostedJob />;
+      case "myAccount":
+        return <MyAccount />;
+      case "profileMatch":
+        return <ProfileMatch />;
+      case "appliedJob":
+        return <AppliedJob />;
+      case "changePassword":
+        return <ChangePassword />;
+      case "/":
+        return <LogOut />;
+      case "myMessage":
+        return <MyMessage />;
+      case "myInbox":
+        return <MyInbox />;
+      case "sent":
+        return <Sent />;
+    }
+  };
   return (
     <>
       <div>
@@ -16,27 +51,46 @@ export default function CompanyLogin() {
                 <div className="col-3 d-flex-col bg-white border">
                   <div className="text-center border">
                     <h6>Welcome</h6>
-                    <h6>Meera Academy</h6>
+                    <h6>Shivansh Solutions</h6>
                   </div>
                   <br />
                   <div className="my-3 border">
                     <div className="text-center my-2 border">
-                      <Link to="/PostNewJob">Post New Job</Link>
+                      <a href="#" onClick={() => setActiveKey("postNewJob")}>
+                        Post New Job
+                      </a>
+                    </div>
+                    <div
+                      className={`text-center my-2 border ${
+                        activeKey === "myPostedJob" ? "bg-warning" : ""
+                      }`}
+                    >
+                      <a href="#" onClick={() => setActiveKey("myPostedJob")}>
+                        My Posted Job
+                      </a>
                     </div>
                     <div className="text-center my-2 border">
-                      <Link to="/MyPostedJob">My Posted Job</Link>
+                      <a href="#" onClick={() => setActiveKey("myAccount")}>
+                        My Account
+                      </a>
                     </div>
                     <div className="text-center my-2 border">
-                      <Link to="/MyAccount">My Account</Link>
-                    </div>
-                    <div className="text-center my-2 border">
-                      <Link to="/ProfileMatch">Profile Match</Link>
+                      <a href="#" onClick={() => setActiveKey("profileMatch")}>
+                        Profile Match
+                      </a>
                     </div>
                     <div className=" text-center my-2 border">
-                      <Link to="/AppliedJob">Applied Job</Link>
+                      <a href="#" onClick={() => setActiveKey("appliedJob")}>
+                        Applied Job
+                      </a>
                     </div>
                     <div className="text-center my-2 border">
-                      <Link to="/ChangePassword">Change Password</Link>
+                      <a
+                        href="#"
+                        onClick={() => setActiveKey("changePassword")}
+                      >
+                        Change Password
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -48,18 +102,21 @@ export default function CompanyLogin() {
                       </h6>
                     </div>
                     <div className="container row">
-                      <div className="col-6 d-flex-col my-3">
+                      <div className="col-6 d-flex-col my-1">
                         <div className="d-flex ">
-                          <label htmlFor="name" className="label-control">
+                          <label
+                            htmlFor="name"
+                            className="label-control col-4 text-end"
+                          >
                             Name:
                           </label>
-                          <input type="text" className="form-control" />
+                          <input type="text" className="col-8" />
                         </div>
 
-                        <div className="d-flex">
+                        <div className="d-flex mt-1 ">
                           <label
                             htmlFor="qualification"
-                            className="label-control"
+                            className="label-control col-6 text-end"
                           >
                             Qualification:
                           </label>
@@ -72,7 +129,7 @@ export default function CompanyLogin() {
                           </select>
                         </div>
                       </div>
-                      <div className="col-6 d-flex-col my-3">
+                      <div className="col-6 d-flex-col my-1">
                         <div>
                           <label htmlFor="name" className="label-control">
                             Skill:
@@ -84,7 +141,7 @@ export default function CompanyLogin() {
                             <option value="3">JavaScript</option>
                             <option value="4">.Net</option>
                           </select>
-                          <form class="d-flex" role="search">
+                          <form class="d-flex mt-1" role="search">
                             <button class="btn btn-success" type="submit">
                               Search
                             </button>
@@ -92,23 +149,29 @@ export default function CompanyLogin() {
                         </div>
                       </div>
                     </div>
-                    <div className="container border">
-                      <div className="container border"></div>
-                    </div>
+                    <div className="container border">{renderComponent()}</div>
                   </div>
                 </div>
                 <div className="col-3 d-flex-col bg-white border">
                   <div className="text-center my-2 border">
-                    <Link to="/">LogOut</Link>
+                    <a href="/" onClick={() => setActiveKey("/")}>
+                      Log Out
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/MyMessage">My Message</Link>
+                    <a href="#" onClick={() => setActiveKey("myMessage")}>
+                      My Message
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/MyInbox">My Inbox</Link>
+                    <a href="#" onClick={() => setActiveKey("myInbox")}>
+                      My Inbox
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/Sent">Sent</Link>
+                    <a href="#" onClick={() => setActiveKey("sent")}>
+                      Sent
+                    </a>
                   </div>
                 </div>
               </div>

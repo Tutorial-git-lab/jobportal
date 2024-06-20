@@ -1,6 +1,6 @@
 import React from "react";
 // import PropTypes from 'proptypes-'
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 export const Navbar = (props) => {
   return (
     <>
@@ -16,36 +16,36 @@ export const Navbar = (props) => {
             >
               <ul className="navbar-nav me-auto p-0 mb-lg-0 ">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <NavLink className="nav-link" to="/">
                     <strong>Home</strong>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/NewJobSeeker">
-                    <strong>New Job Seeker</strong>
-                  </Link>
+                  <NavLink className="nav-link" to="/NewJobSeeker">
+                    <strong> Job Seeker</strong>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/NewCompany">
+                  <NavLink className="nav-link" to="/NewCompany">
                     <strong>New Company</strong>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Login">
-                    <strong>Login</strong>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/Feedback">
+                  <NavLink className="nav-link" to="/Feedback">
                     <strong>FeedBack</strong>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/ContactUs">
+                  <NavLink className="nav-link" to="/ContactUs">
                     <strong>Contact Us</strong>
-                  </Link>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Login">
+                    <strong>Login</strong>
+                  </NavLink>
                 </li>
               </ul>
             </div>

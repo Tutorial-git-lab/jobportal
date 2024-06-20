@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function NewJobSeeker() {
   return (
     <div className="d-flex align-item-center justify-content-center w-80 vh-40 ">
@@ -10,14 +11,14 @@ export default function NewJobSeeker() {
             </h5>
           </div>
 
-          <div className="col-6 d-flex-col p-3 border">
+          <div className="col-6 d-flex-col p-3 border ">
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="firstName" className="form-label col-4 text-end">
                 <strong>First Name:</strong>
               </label>
               <input
                 type="text"
-                className="col-6"
+                className="col-5"
                 placeholder="Enter first name"
               />
             </div>
@@ -27,7 +28,7 @@ export default function NewJobSeeker() {
               </label>
               <input
                 type="text"
-                className="col-6"
+                className="col-5"
                 placeholder="Enter last name"
               />
             </div>
@@ -37,7 +38,7 @@ export default function NewJobSeeker() {
               </label>
               <input
                 type="text"
-                className="col-6"
+                className="col-5"
                 placeholder="Enter Address"
               />
             </div>
@@ -45,43 +46,48 @@ export default function NewJobSeeker() {
               <label htmlFor="city" className="form-label col-4 text-end">
                 <strong>City:</strong>
               </label>
-              <input
-                type="text"
-                className="col-6"
-                placeholder="Enter your city."
-              />
+              <select name="select" className="col-5">
+                <option value="0">Pune</option>
+                <option value="1">Mumbai</option>
+                <option value="2">Mohali</option>
+                <option value="3">jaipur</option>
+              </select>
             </div>
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="pincode" className="form-label col-4 text-end">
                 <strong>Pincode:</strong>
               </label>
-              <input
-                type="text"
-                className="col-6"
-                placeholder="Enter Pinecode"
-              />
+              <select name="select" className="col-5">
+                <option value="0">Software Developer</option>
+                <option value="1">Database Engineer</option>
+                <option value="2">DevOps Engineer</option>
+                <option value="3">Software Engineer</option>
+              </select>
             </div>
 
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="mobile" className="form-label col-4 text-end">
                 <strong>Mobile:</strong>
               </label>
-              <input type="text" className="col-6" placeholder="Enter Mobile" />
+              <input type="text" className="col-5" placeholder="Enter Mobile" />
             </div>
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="gender" className="form-label col-4 text-end">
                 <strong>Gender:</strong>
               </label>
-              <select name="select" className="col-3">
+              <select name="select" className="col-5">
                 <option value="0">Male</option>
                 <option value="1">Female</option>
               </select>
             </div>
+          </div>
+
+          <div className="col-6 d-flex-col p-3 border">
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="degree" className="form-label col-4 text-end">
                 <strong>Degree:</strong>
               </label>
-              <select name="select" className="col-3">
+              <select name="select" className="col-5">
                 <option value="0">MCA</option>
                 <option value="1">BCA</option>
                 <option value="2">B.Tech</option>
@@ -89,14 +95,11 @@ export default function NewJobSeeker() {
                 <option value="4">MBA</option>
               </select>
             </div>
-          </div>
-
-          <div className="col-6 d-flex-col p-3 border">
             <div className="form-group d-flex mb-2 row">
               <label htmlFor="skill" className="form-label col-4 text-end">
                 <strong>Skill:</strong>
               </label>
-              <select name="select" id="select" className="col-3">
+              <select name="select" id="select" className="col-5">
                 <option value="0">ASP.Net</option>
                 <option value="1">Javascript</option>
                 <option value="2">Angular</option>
@@ -108,7 +111,7 @@ export default function NewJobSeeker() {
               <label htmlFor="exprience" className="form-label col-4 text-end">
                 <strong>Exprience:</strong>
               </label>
-              <select name="select" className="col-3">
+              <select name="select" className="col-5">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -122,7 +125,7 @@ export default function NewJobSeeker() {
               </label>
               <input
                 type="email"
-                className="col-6 "
+                className="col-5 "
                 placeholder="Enter Email address"
               />
             </div>
@@ -132,7 +135,7 @@ export default function NewJobSeeker() {
               </label>
               <input
                 type="password"
-                className="col-6"
+                className="col-5"
                 placeholder="Enter Password"
               />
             </div>
@@ -145,14 +148,16 @@ export default function NewJobSeeker() {
               </label>
               <input
                 type="password"
-                className="col-6"
+                className="col-5"
                 placeholder="Enter Confirm-password"
               />
             </div>
             <div className="text-center">
-              <button type="submit" className="btn btn-success mt-3">
-                Registration
-              </button>
+              <Link to="/">
+                <button type="submit" className="btn btn-success mt-2">
+                  Submit
+                </button>
+              </Link>
             </div>
           </div>
         </div>

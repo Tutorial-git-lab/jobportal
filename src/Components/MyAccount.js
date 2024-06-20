@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 export default function MyAccount() {
   return (
     <>
@@ -7,10 +6,10 @@ export default function MyAccount() {
         <div className="form_container rounded bg-white w-80 my-1">
           <div className="row">
             <div className="d-flex justify-content-center border">
-              <h5 className="text-center mb-3 my-2 ">My Account</h5>
+              <h5 className="text-center mb-2 my-1 ">My Account</h5>
             </div>
 
-            <div className="col-12 d-flex-col p-1 border">
+            <div className="col-12 d-flex-col p-2 border">
               <div className="form-group d-flex mb-2 my-3 row">
                 <label
                   htmlFor="companyName"
@@ -38,7 +37,7 @@ export default function MyAccount() {
                 <label htmlFor="city" className="form-label col-4 text-end">
                   <strong>City:</strong>
                 </label>
-                <select name="select" id="select" className="col-3 ">
+                <select name="select" id="select" className="col-6 ">
                   <option value="0">Delhi</option>
                   <option value="1">Mumbai</option>
                   <option value="2">Pune</option>
@@ -98,7 +97,6 @@ export default function MyAccount() {
           </div>
         </div>
       </div>
-      <Outlet />
     </>
   );
 }

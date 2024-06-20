@@ -1,11 +1,11 @@
 import React from "react";
-export default function PostNewJob() {
+export default function MyPostedJob() {
   return (
     <div className="d-flex align-item-center justify-content-center w-80 vh-40 ">
-      <div className="form_container rounded bg-white w-80 my-3">
+      <div className="form_container rounded bg-white w-80 my-1">
         <div className="row">
           <div className="d-flex justify-content-center">
-            <h6 className="text-center mb-3 my-1 ">Post New Job</h6>
+            <h5 className="text-center p-1 ">My Posted Job</h5>
           </div>
 
           <div className="border">

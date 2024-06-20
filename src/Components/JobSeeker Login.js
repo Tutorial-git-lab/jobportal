@@ -1,7 +1,43 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import MyAccount from "./MyAccount";
-export default function CompanyLogin() {
+import JobMatches from "./JobMatches";
+import ProfileMatch from "./ProfileMatch";
+import AppliedJob from "./AppliedJob";
+import ChangePassword from "./ChangePassword";
+import PostNewJob from "./PostNewJob";
+import LogOut from "./LogOut";
+import MyMessage from "./MyMessage";
+import MyInbox from "./MyInbox";
+import MySent from "./MySent";
+export default function JobSeekerLogin() {
+  const [activeKey, setActiveKey] = useState("myAccount");
+  const renderComponent = () => {
+    switch (activeKey) {
+      case "myAccount":
+        return <MyAccount />;
+      case "jobMatches":
+        return <JobMatches />;
+      case "postNewJob":
+        return <PostNewJob />;
+      case "profileMatch":
+        return <ProfileMatch />;
+      case "appliedJob":
+        return <AppliedJob />;
+      case "changePassword":
+        return <ChangePassword />;
+      case "/":
+        return <LogOut />;
+      case "myMessage":
+        return <MyMessage />;
+      case "myInbox":
+        return <MyInbox />;
+      case "mySent":
+        return <MySent />;
+      default:
+        break;
+    }
+  };
   return (
     <>
       <div>
@@ -32,28 +68,43 @@ export default function CompanyLogin() {
                     <input type="file" />
                   </div>
                   <div className="my-1 border">
-                    <div className="text-center my-1 border">
-                      <Link to="/MyAccount">My Account</Link>
+                    <div
+                      className={`text-center my-1 border ${
+                        activeKey === "myAccount" ? "bg-info" : ""
+                      }`}
+                    >
+                      <a href="#" onClick={() => setActiveKey("myAccount")}>
+                        My Account
+                      </a>
                     </div>
 
                     <div className="text-center my-1 border">
-                      <Link to="/JobMatches">Job Matches</Link>
-                      <Outlet />
+                      <a href="#" onClick={() => setActiveKey("jobMatches")}>
+                        Job Matches
+                      </a>
                     </div>
                     <div className="text-center my-1 border">
-                      <Link to="/PostNewJob">Post New Job</Link>
+                      <a href="#" onClick={() => setActiveKey("postNewJob")}>
+                        Post New Job
+                      </a>
                     </div>
                     <div className="text-center my-1 border">
-                      <Link to="/ProfileMatch">Profile Match</Link>
+                      <a href="#" onClick={() => setActiveKey("profileMatch")}>
+                        Profile Match
+                      </a>
                     </div>
                     <div className=" text-center my-1 border">
-                      <Link to="/AppliedJob">Applied Job</Link>
+                      <a href="#" onClick={() => setActiveKey("appliedJob")}>
+                        Applied Job
+                      </a>
                     </div>
                     <div className="text-center my-1 border">
-                      <Link to="/ChangePassword">Change Password</Link>
-                    </div>
-                    <div className="text-center my-1 border">
-                      <Link to="/ChangePassword">Log Out </Link>
+                      <a
+                        href="#"
+                        onClick={() => setActiveKey("changePassword")}
+                      >
+                        Change Password
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -109,23 +160,29 @@ export default function CompanyLogin() {
                         </div>
                       </div>
                     </div>
-                    <div className="container border">
-                      <Outlet />
-                    </div>
+                    <div className="container border">{renderComponent()}</div>
                   </div>
                 </div>
                 <div className="col-3 d-flex-col bg-white border">
                   <div className="text-center my-2 border">
-                    <Link to="/">LogOut</Link>
+                    <a href="/" onClick={() => setActiveKey("/")}>
+                      Log Out
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/MyMessage">My Message</Link>
+                    <a href="#" onClick={() => setActiveKey("myMessage")}>
+                      My Message
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/MyBox">My Inbox</Link>
+                    <a href="#" onClick={() => setActiveKey("myInbox")}>
+                      My Inbox
+                    </a>
                   </div>
                   <div className="text-center my-2 border">
-                    <Link to="/Sent">My Sent</Link>
+                    <a href="#" onClick={() => setActiveKey("mySent")}>
+                      My Sent
+                    </a>
                   </div>
                 </div>
               </div>
@@ -133,6 +190,8 @@ export default function CompanyLogin() {
           </div>
         </div>
       </div>
+
+      <Outlet />
     </>
   );
 }

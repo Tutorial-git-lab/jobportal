@@ -5,7 +5,7 @@ export default function MyInbox() {
       <div className="form_container rounded bg-white w-80 my-3">
         <div className="row">
           <div className="d-flex justify-content-center border">
-            <h5 className="text-center mb-3 my-2 ">Job Seeker Message Sent</h5>
+            <h5 className="text-center mb-0 p-1 ">Job Seeker Message Sent</h5>
           </div>
 
           <div className="col-12 d-flex-col p-3 ">
