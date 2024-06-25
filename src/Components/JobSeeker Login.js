@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
 import MyAccount from "./MyAccount";
 import JobMatches from "./JobMatches";
 import ProfileMatch from "./ProfileMatch";
@@ -43,11 +42,7 @@ export default function JobSeekerLogin() {
       <div>
         <div className="container border">
           <div className="row">
-            <div className=" border my-3">
-              <div className="text-center">
-                <h6>Welcome to HR consultancy Management System!!</h6>
-              </div>
-            </div>
+            <div className=" border my-3"></div>
             <div className="container align-item-center justify-content-center w-80 vh-80">
               <div className="row">
                 <div className="col-3 d-flex-col bg-white border">
@@ -190,8 +185,6 @@ export default function JobSeekerLogin() {
           </div>
         </div>
       </div>
-
-      <Outlet />
     </>
   );
 }

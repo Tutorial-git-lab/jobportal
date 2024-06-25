@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Home = ({ onLogin }) => {
+export const Home = ({ onLogin }) => {
   const nav = useNavigate();
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -101,4 +101,3 @@ const Home = ({ onLogin }) => {
     </>
   );
 };
-export default Home;
